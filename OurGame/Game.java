@@ -20,6 +20,7 @@ public class Game
     private Parser parser;
     private ParserWithFileInput parserWithFileInput;
     private Room currentRoom;
+    int numberOfDrinks = 0;
         
     /**
      * Create the game and initialise its internal map.
@@ -39,7 +40,7 @@ public class Game
         Room outside, theater, pub, lab, office, theUGAArch;
       
         // create the rooms
-        theUGAArch = new Room("You are back at the Arch. Why are you back here.");
+        theUGAArch = new Room("You are at the Arch. Your journey has begun.");
         outside = new Room("outside the main entrance of the university");
         theater = new Room("in a lecture theater");
         pub = new Room("in the campus pub");
@@ -114,11 +115,13 @@ public class Game
     private boolean processCommand(Command command) 
     {
         boolean wantToQuit = false;
+        int numberOfDrinks = 0;
 
         if(command.isUnknown()) {
             System.out.println("I don't know what you mean...");
             return false;
         }
+        
 
         String commandWord = command.getCommandWord();
         if (commandWord.equals("help")) {
@@ -133,11 +136,30 @@ public class Game
         else if (commandWord.equals("look")) {
             //wantToLook = look(command);
         }
+        else if (commandWord.equals("drink")) {
+            numberOfDrinks++;
+            System.out.println("You drank a beer.");
+            if (numberOfDrinks == 4)
+            {
+                
+                System.out.println("You're starting to get dizzy.");
+                
+            }
+        }
         // else command not recognised.
         return wantToQuit;
     }
 
     // implementations of user commands:
+    
+    
+    
+    
+    
+    public int getDrinks()
+    {
+        return numberOfDrinks;
+    }
 
     
     
