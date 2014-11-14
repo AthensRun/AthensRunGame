@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=description
-comment0.target=BarBathroom(java.lang.String)
+comment0.target=barburritos(java.lang.String)
 comment1.params=command
-comment1.target=void\ open(Command)
+comment1.target=void\ enter(Command)
 numComments=2

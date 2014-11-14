@@ -18,7 +18,10 @@ import java.util.HashMap;
 public class Room 
 {
     private String description;
-    private HashMap<String, Room> exits;        // stores exits of this room.
+    private HashMap<String, Room> exits; 
+    private People currentP1;
+    private People currentP2;
+    // stores exits of this room.
 
     /**
      * Create a room described "description". Initially, it has
@@ -69,7 +72,7 @@ public class Room
      */
     private String getExitString()
     {
-        String returnString = "Exits:";
+        String returnString = "Streets:";
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
             returnString += " " + exit;
@@ -89,13 +92,25 @@ public class Room
     }
     
  
-    public void press(Command command)
+    public void see(Command command)
+    {
+        System.out.println("Do What?");
+    }
+    
+    public void open(Command command)
     {
         System.out.println("Do What?");
     }
     public void changeDescription(String newDescription)
     {
         description = newDescription;
+    }
+    
+    public void setPeople1(People pr1)
+    {
+        
+      
+        
     }
 }
 

@@ -3,21 +3,21 @@
  * Write a description of class BarBathroom here.
  * 
  * @author (your name) 
+ * 
  * @version (a version number or a date)
  */
 public class BarBathroom extends Room
 {
 
-    /**
-     * Constructor for objects of class 
-     */
+  
+     
     public BarBathroom(String description)
     {
         super(description);
     }
-    public void press(Command command)
+    public void open(Command command)
     {
-        if(command.getSecondWord().equals("button"))
+        if(command.getSecondWord().equals("door"))
         {
             System.out.println("You press the button and part of the wall " +
                 "slides open revealing a staircase.");
@@ -30,11 +30,12 @@ public class BarBathroom extends Room
         }
         else
         {
-            super.press(command);
+            super.open(command);
         }
     }
 
     
 }
+
 
 
