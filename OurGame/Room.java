@@ -51,11 +51,11 @@ public class Room
      * @return The short description of the room
      * (the one that was defined in the constructor).
      */
-    public String getShortDescription()
+    public String getDescription()
     {
         return description;
     }
-
+    
     /**
      * Return a description of the room in the form:
      *     You are in the kitchen.
@@ -64,8 +64,9 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "You are " + description + ".\n" + getExitString();
+        return "You are at " + description + ".\n" + getExitString();
     }
+
 
     /**
      * Return a string describing the room's exits, for example
@@ -108,21 +109,12 @@ public class Room
         description = newDescription;
     }
     
-    public void enter()
+    public void enter(Command command)
     {
-        String commandWord = command.getCommandWord();
-        String secondWord = command.getSecondWord(); 
-        
-        if(commandWord.equals("enter"))
-        {
-            if(!command.hasSecondWord())
-            {
+   
             System.out.println("Enter where?");
-            return;
-            }
+    
         }
-        
-    }
     
     public void setPeople1(People pr1)
     {

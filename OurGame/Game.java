@@ -40,7 +40,7 @@ public class Game
     private void createRooms()
     {
         Room broadE, broadW, intersectionSW, intersectionNW, intersectionN, intersectionC, intersectionNE, intersectionSE, intersectionE, intersectionW, lumpkinS, lumpkinN, collegeS, 
-        collegeN, claytonE, claytonW, washingtonW, washingtonE, jacksonN, jacksonS, theArch;
+        collegeN, claytonE, claytonW, washingtonW, washingtonE, jacksonN, jacksonS, theArch, starbucks;
 
         
         //creating the intersections
@@ -69,6 +69,9 @@ public class Game
         washingtonW = new Room("West Washington St.");
         jacksonN = new Room("North Jackson St.");
         jacksonS = new Room("South Jackson St.");
+        
+        
+         starbucks = new Starbucks("Blue");
 
         // initialize intersection exits
         
@@ -118,6 +121,7 @@ public class Game
 
         broadE.setExit("east", intersectionSE);
         broadE.setExit("west", theArch);
+        broadE.setExit("starbucks", starbucks);
 
         collegeS.setExit("north", intersectionC);
         collegeS.setExit("south", theArch);
@@ -142,13 +146,17 @@ public class Game
 
         washingtonE.setExit("west", intersectionN);
         washingtonE.setExit("east", intersectionSE);
+        
+        //initialize bar exits
 
+        starbucks.setExit("outside", broadE);
+       
         currentRoom = theArch;  // start game theArch
     }
     
     public void drinkAtStarbucks(Command command)
     {
-        starbucks water, coffee;
+       
         String commandWord = command.getCommandWord();
         String secondWord = command.getSecondWord();       
         if (commandWord.equals("drink") && (command.secondWord == "water"))
@@ -292,7 +300,7 @@ public class Game
     
     public void drinkAtTheBury(Command command)
     {
-        bury water, taquilla, liquor, beer, vodka, surpriseMe;
+    
         String commandWord = command.getCommandWord();
         String secondWord = command.getSecondWord();       
         if (commandWord.equals("drink") && (command.secondWord == "water"))
@@ -553,6 +561,12 @@ public class Game
         {
             System.out.println("Type 'help' if you need help.");
         }
+        else if(commandWord.equals("enter")) {
+            currentRoom.enter(command);
+            System.out.println(currentRoom.getLongDescription());
+            
+            
+            }
         else if (commandWord.equals("drink")) {
             numberOfDrinks++;
             System.out.println("You drank a beer.");

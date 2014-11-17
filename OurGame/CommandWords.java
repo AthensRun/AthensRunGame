@@ -18,7 +18,7 @@ public class CommandWords
            "left", "right", "north", "south", "east", "west","leave",
         "enter","see","bathroom","map","go","boarshead","wonderbar", 
         "fuzzies", "cutters", "barritos","tacostand","fiveguys",
-        "starbucks","transmetpizza","magnolias","bury"
+        "starbucks","transmetpizza","magnolias","bury","outside"
         
        };   
     

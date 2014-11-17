@@ -5,9 +5,9 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class starbucks extends Room
+public class Starbucks extends Room
 {
-    public starbucks(String description)
+    public Starbucks(String description)
     {
         super(description);
     }
@@ -17,11 +17,12 @@ public class starbucks extends Room
         {
             System.out.println("You entered Starbucks " +
                 "Do you even party? why are you here on a saturday night?");
-            
+           
+           
         }
         else
         {
-            super.open(command);
+            super.enter(command);
         }
     }
 }
