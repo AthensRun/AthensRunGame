@@ -7,6 +7,8 @@
  */
 public class boarshead extends Room
 {
+   
+    
     public boarshead(String description)
     {
         super(description);

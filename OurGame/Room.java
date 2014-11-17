@@ -1,6 +1,5 @@
 import java.util.Set;
 import java.util.HashMap;
-
 /**
  * Class Room - a room in an adventure game.
  *
@@ -19,8 +18,11 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits; 
+    private HashMap<String, People> left;
+    private HashMap<String, People> right;
     private People currentP1;
     private People currentP2;
+    private Command command;
     // stores exits of this room.
 
     /**
@@ -104,6 +106,22 @@ public class Room
     public void changeDescription(String newDescription)
     {
         description = newDescription;
+    }
+    
+    public void enter()
+    {
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord(); 
+        
+        if(commandWord.equals("enter"))
+        {
+            if(!command.hasSecondWord())
+            {
+            System.out.println("Enter where?");
+            return;
+            }
+        }
+        
     }
     
     public void setPeople1(People pr1)

@@ -13,15 +13,14 @@ public class CommandWords
 {
     // a constant array that holds all valid command words
     private static final String[] validCommands = 
-       { 
-           
-           "walk", "quit", "help", "look","hi","bye","drink","evade", "left", "right", "north", "south", "east", "west","leave",
-        "enter","see","bathroom","map","go","boarshead","wonderbar", "fuzzies", "cutters", "barritos","tacostand","5guys","starbucks","transmetpizza","magnolias","bury"};
-    
-    
-    
-    
-    
+       {            
+           "quit", "help", "look","hi","bye","drink","evade",
+           "left", "right", "north", "south", "east", "west","leave",
+        "enter","see","bathroom","map","go","boarshead","wonderbar", 
+        "fuzzies", "cutters", "barritos","tacostand","fiveguys",
+        "starbucks","transmetpizza","magnolias","bury"
+        
+       };   
     
 
     /**

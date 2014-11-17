@@ -47,7 +47,7 @@ public class Game
         intersectionN = new Room("Intersection between East & West Washingtoon St. and North College Ave.");
         intersectionW = new Room("Intersection between North & South Lumpkin St. and West Clayton St.");
         intersectionE = new Room("Intersection between North & South Jackson St. and East Clayton St.");
-        intersectionC = new Room("Intersection between East & West Clayton St. and East and West Clayton St.");
+        intersectionC = new Room("Intersection between East & West Clayton St. and North and South College Ave.");
 
         intersectionSW = new Room("Intersection between West Broad St. & South Lumpkin St.");
         intersectionNW = new Room("Intersection between West Washington St. & North Lumpkin St.");
@@ -71,9 +71,11 @@ public class Game
         jacksonS = new Room("South Jackson St.");
 
         // initialize intersection exits
+        
+        
         intersectionC.setExit("west", claytonW);
         intersectionC.setExit("north", collegeN);
-        intersectionC.setExit("east", collegeS);
+        intersectionC.setExit("south", collegeS);
         intersectionC.setExit("east", claytonE);
 
         intersectionN.setExit("east", washingtonE);
@@ -101,6 +103,12 @@ public class Game
         intersectionSE.setExit("west", broadE);
 
         // initialise street exits
+        claytonW.setExit("east", intersectionC);
+        claytonW.setExit("west", intersectionW);
+        
+        claytonE.setExit("west", intersectionC);
+        claytonE.setExit("east", intersectionE);
+        
         theArch.setExit("west", broadW);
         theArch.setExit("east", broadE);
         theArch.setExit("north", collegeS);
@@ -127,15 +135,324 @@ public class Game
         jacksonS.setExit("north", intersectionE);
 
         jacksonN.setExit("south", intersectionE);
-        jacksonN.setExit("north", intersectionSE);
+        jacksonN.setExit("north", intersectionNE);
 
         washingtonW.setExit("east", intersectionN);
-        washingtonW.setExit("west", intersectionSW);
+        washingtonW.setExit("west", intersectionNW);
 
         washingtonE.setExit("west", intersectionN);
         washingtonE.setExit("east", intersectionSE);
 
         currentRoom = theArch;  // start game theArch
+    }
+    
+    public void drinkAtStarbucks(Command command)
+    {
+        starbucks water, coffee;
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "coffee"))
+            {
+              System.out.println("coffee on a Saturday night? you must be tired!")  ;
+            }
+            
+        if(commandWord.equals("drink")&&(command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at starbucks");
+            }
+    }
+    
+    public void drinkAtTacoStand(Command command)
+    {
+      
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink")&&(command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink")&&(command.secondWord == "taquilla"))
+            {
+              System.out.println("a few of these and your night is not going to end well")  ;
+            }
+            
+        if (commandWord.equals("drink")&&(command.secondWord == "liquor"))
+            {
+              System.out.println("take it easy friend, you have a long night ahead of you")  ;
+            }
+            
+        if (commandWord.equals("drink")&&(command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            }    
+            
+        if(commandWord.equals("drink")&&(command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at TacoStand");
+            }
+    }
+    
+    public void drinkAtBoarsHead(Command command)
+    {
+        
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink")&&(command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink")&&(command.secondWord == "vodka"))
+            {
+              System.out.println("the drink of champions!!!")  ;
+            }
+            
+        if (commandWord.equals("drink")&&(command.secondWord == "liquor"))
+            {
+              System.out.println("take it easy friend, you have a long night ahead of you")  ;
+            }
+            
+        if (commandWord.equals("drink")&&(command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            }    
+            
+        if(commandWord.equals("drink")&&(command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at BoarsHead");
+            }
+    }
+    
+    public void drinkAtCutters(Command command)
+    {
+        cutters water, surpriseMe, liquor, beer;
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "surpriseMe"))
+            {
+              System.out.println("a few of these and your night is not going to end well")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "liquor"))
+            {
+              System.out.println("take it easy friend, you have a long night ahead of you")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            }    
+            
+        if(commandWord.equals("drink") && (command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at Cutters");
+            }
+    }
+    
+    public void drinkAtWonderBar(Command command)
+    {
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "jack"))
+            {
+              System.out.println("for the expensive video gamers")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "liquor"))
+            {
+              System.out.println("take it easy friend, you have a long night ahead of you")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            }    
+            
+        if(commandWord.equals("drink") && (command.isUnknown())) 
+            {
+            System.out.println("This drink is not available at WonderBar");
+            }
+    }
+    
+    public void drinkAtTheBury(Command command)
+    {
+        bury water, taquilla, liquor, beer, vodka, surpriseMe;
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "taquilla"))
+            {
+              System.out.println("a few of these and your night is not going to end well")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "liquor"))
+            {
+              System.out.println("take it easy friend, you have a long night ahead of you")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            } 
+            
+        if (commandWord.equals("drink") && (command.secondWord == "vodka"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            } 
+            
+        if (commandWord.equals("drink") && (command.secondWord == "surpriseMe"))
+            {
+              System.out.println("you just tasted the color purple")  ;
+            }    
+            
+        if(commandWord.equals("drink") && (command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at the Bury");
+            }
+    }
+    
+    public void drinkAtFiveGuys(Command command)
+    {
+        fiveguys water, soda;
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+        
+        if (commandWord.equals("drink") && (command.secondWord == "soda"))
+            {
+              System.out.println("this is a nice change of pace for a saturday night")  ;
+            }
+            
+        if(commandWord.equals("drink") && (command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at Five Guys");
+            }
+    }
+    
+    public void drinkAtBarBurritos(Command command)
+    {
+        barburritos water, beer, soda;
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            } 
+                        
+        if (commandWord.equals("drink") && (command.secondWord == "soda"))
+            {
+              System.out.println("this is a nice change of pace for a Saturday night")  ;
+            }    
+            
+        if (commandWord.equals("drink") && (command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at the Barburittos");
+            }
+    }
+    
+    public void drinkAtMagnolias(Command command)
+    {
+        magnolias water, taquilla, liquor, beer, vodka;
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "taquilla"))
+            {
+              System.out.println("a few of these and your night is not going to end well")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "liquor"))
+            {
+              System.out.println("take it easy friend, you have a long night ahead of you")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            } 
+            
+        if (commandWord.equals("drink") && (command.secondWord == "vodka"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            } 
+                        
+        if(commandWord.equals("drink") && (command.isUnknown())) 
+            {
+            System.out.println("This drink is not available at the Fuzzies");
+            }
+    }
+    
+    public void drinkAtFuzzies(Command command)
+    {
+        fuzzies water, taquilla, liquor, beer, vodka, surpriseMe;
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();       
+        if (commandWord.equals("drink") && (command.secondWord == "water"))
+            {
+              System.out.println("you are sobering up!")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "taquilla"))
+            {
+              System.out.println("a few of these and your night is not going to end well")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "liquor"))
+            {
+              System.out.println("take it easy friend, you have a long night ahead of you")  ;
+            }
+            
+        if (commandWord.equals("drink") && (command.secondWord == "beer"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            } 
+            
+        if (commandWord.equals("drink") && (command.secondWord == "vodka"))
+            {
+              System.out.println("When money is tight go natty-lite")  ;
+            } 
+            
+        if (commandWord.equals("drink") && (command.secondWord == "surpriseMe"))
+            {
+              System.out.println("you just tasted the color purple")  ;
+            }    
+            
+        if(commandWord.equals("drink") && (command.isUnknown()) )
+            {
+            System.out.println("This drink is not available at the Fuzzies");
+            }
     }
 
     public void createPeople()
@@ -230,6 +547,7 @@ public class Game
         }
         else if (commandWord.equals("look")) {
             //wantToLook = look(command);
+            goLook(command);
         }
         else if(commandWord.equals("see"))
         {
@@ -290,15 +608,25 @@ public class Game
 
     
     
-    public void goLook(Command x)
+    public void goLook(Command command)
     {
-        if(!x.hasSecondWord()) {
+       String commandWord = command.getCommandWord();
+       String secondWord = command.getSecondWord();
+        
+        if(commandWord.equals("look"))
+        {
+        if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Look where?");
             return;
         }
-        String direction = x.getSecondWord();
-
+        else
+        {
+          String direction = command.getSecondWord();
+          return;
+        }
+        
+       }
     }
 
     
@@ -311,8 +639,13 @@ public class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("If you are on the street press");
+        System.out.println("'go' followed by one of the words 'north', 'south', 'east', or 'west'");
+        System.out.println(" An example would be 'go north'");
+        System.out.println();
+        System.out.println("If you are in a bar press");
+        System.out.println("'look' followed by one of the words 'left', 'right', 'up', or 'down' ");
+        System.out.println(" An example would be 'look right'");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
@@ -359,12 +692,33 @@ public class Game
         }
     }
 
-    private void look(Command command) 
+  
+    private void goEnter(Command command)
     {
-        if(!command.hasSecondWord()) {
-            System.out.println("Look where?");
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();
+        if(commandWord.equals("enter"))
+        {
+            if(!command.hasSecondWord())
+            {
+                   System.out.println("Enter where?");
             return;
+            }
+          else if (secondWord.equals("starbucks"))
+          {
+            
+              
+              
+            }
+            
+            
+            
         }
+        
+        
+        
     }
+    
+     
 
 }

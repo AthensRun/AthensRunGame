@@ -19,8 +19,8 @@
 
 public class Command
 {
-    private String commandWord;
-    private String secondWord;
+    public String commandWord;
+    public String secondWord;
 
     /**
      * Create a command object. First and second word must be supplied, but
@@ -67,7 +67,9 @@ public class Command
      */
     public boolean hasSecondWord()
     {
+        
         return (secondWord != null);
+        
     }
 }
 
