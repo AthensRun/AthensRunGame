@@ -18,11 +18,10 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits; 
-    private HashMap<String, People> left;
-    private HashMap<String, People> right;
-    private People currentP1;
-    private People currentP2;
+
+    ;
     private Command command;
+    private Purchases purchases;
     // stores exits of this room.
 
     /**
@@ -55,7 +54,7 @@ public class Room
     {
         return description;
     }
-    
+
     /**
      * Return a description of the room in the form:
      *     You are in the kitchen.
@@ -64,10 +63,9 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "You are at " + description + ".\n" + getExitString();
+        return description + "  " +  getExitString();
     }
-
-
+    
     /**
      * Return a string describing the room's exits, for example
      * "Exits: north west".
@@ -93,34 +91,27 @@ public class Room
     {
         return exits.get(direction);
     }
-    
- 
+
     public void see(Command command)
     {
         System.out.println("Do What?");
     }
-    
+
     public void open(Command command)
     {
         System.out.println("Do What?");
     }
+
     public void changeDescription(String newDescription)
     {
         description = newDescription;
     }
-    
+
     public void enter(Command command)
     {
-   
-            System.out.println("Enter where?");
-    
-        }
-    
-    public void setPeople1(People pr1)
-    {
-        
-      
-        
-    }
-}
 
+        System.out.println("Enter where?");
+
+    }
+
+}

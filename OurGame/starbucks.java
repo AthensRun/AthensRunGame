@@ -7,22 +7,23 @@
  */
 public class Starbucks extends Room
 {
+    
+    
     public Starbucks(String description)
     {
         super(description);
     }
-    public void enter(Command command)
+    public void inStarbucks(Command command)
     {
-        if(command.getSecondWord().equals("starbucks"))
-        {
-            System.out.println("You entered Starbucks " +
-                "Do you even party? why are you here on a saturday night?");
-           
-           
-        }
-        else
-        {
-            super.enter(command);
+        String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord(); 
+        
+           if(!secondWord.equals("water") || !secondWord.equals("coffee"))
+            {
+                System.out.println("You cannot order " + secondWord + " here.");
+       
         }
     }
+    
 }
+      
