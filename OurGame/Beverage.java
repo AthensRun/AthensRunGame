@@ -1,19 +1,22 @@
 
 /**
- * Write a description of class Water here.
+ * Write a description of class Beverage here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Water extends Room
+public class Beverage extends Item
 {
     // instance variables - replace the example below with your own
-     public Water(String description)
+    int numOfDrinks = 0;
+    public Beverage(String description)
     {
         super(description);
     }
-    public void drinkWater(Command command)
+    public void getDrink()
     {
-       
+        
+        
+      
     }
 }

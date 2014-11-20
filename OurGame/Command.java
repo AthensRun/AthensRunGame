@@ -60,8 +60,13 @@ public class Command
     public boolean isUnknown()
     {
         return (commandWord == null);
+ 
     }
+    public boolean isSecondUnknown()
+    {
+       return (secondWord == null);
 
+    }
     /**
      * @return true if the command has a second word.
      */

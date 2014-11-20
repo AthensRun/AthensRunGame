@@ -1,5 +1,4 @@
 
-
 /**
  * Class Room - a room in an adventure game.
  *
@@ -14,7 +13,7 @@
  * @version 2011.08.08
  */
 
-public class theEX extends Person
+public class Roommate extends Person
 {
   
     
@@ -25,7 +24,7 @@ public class theEX extends Person
      * "an open court yard".
      * @param description The room's description.
      */
-    public theEX(String description) 
+    public Roommate(String description) 
     {
         super(description);
       
@@ -33,4 +32,3 @@ public class theEX extends Person
 
 
 }
-

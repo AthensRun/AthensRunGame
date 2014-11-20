@@ -15,23 +15,20 @@ public class BarBathroom extends Room
     {
         super(description);
     }
-    public void open(Command command)
+    public void enter(Command command)
     {
-        if(command.getSecondWord().equals("door"))
+        String secondWord = command.getSecondWord();
+        if(secondWord.equals("bathroom"))
         {
-            System.out.println("You press the button and part of the wall " +
-                "slides open revealing a staircase.");
-            Room cellar = new Room("in a dark and dusty cellar");
-            setExit("down", cellar);
-            cellar.setExit("up", this);
-            changeDescription("in the computing admin office" +
-            ".  \nThere is a depressed button on the desk." +
-            "\nAn opening in the wall reveals a staircase leading down.");
+            getLongDescription();
+            Room stall = new Room("in a damp and musty bathroom stall.");
+            stall.setExit("out", this);
+            setExit("stall", stall);
+            
+            
+            
         }
-        else
-        {
-            super.open(command);
-        }
+    
     }
 
     

@@ -1,5 +1,4 @@
 
-
 /**
  * Class Room - a room in an adventure game.
  *
@@ -14,23 +13,33 @@
  * @version 2011.08.08
  */
 
-public class theEX extends Person
+public class Item 
 {
-  
+    private String description;
     
-
+ 
+  
+   
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
      * @param description The room's description.
      */
-    public theEX(String description) 
+    public Item(String description) 
     {
-        super(description);
+        this.description = description;
       
     }
-
-
+    
+    
+    public String getDesc()
+    {
+        return description;
+    }
+    
+    public void getDrink()
+    {
+    }
+    
 }
-

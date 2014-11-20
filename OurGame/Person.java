@@ -1,33 +1,37 @@
 
 /**
- * Write a description of class Person here.
+ * Class Room - a room in an adventure game.
+ *
+ * This class is part of the "World of Zuul" application. 
+ * "World of Zuul" is a very simple, text based adventure game.  
+ *
+ * A "Room" represents one location in the scenery of the game.  It is 
+ * connected to other rooms via exits.  For each existing exit, the room 
+ * stores a reference to the neighboring room.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author  Michael Kölling and David J. Barnes
+ * @version 2011.08.08
  */
-public class Person extends Room
+
+public class Person 
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String description;
 
     /**
-     * Constructor for objects of class Person
+     * Create a room described "description". Initially, it has
+     * no exits. "description" is something like "a kitchen" or
+     * "an open court yard".
+     * @param description The room's description.
      */
-    public Person()
+    public Person(String description) 
     {
-        // initialise instance variables
-        x = 0;
+        this.description = description;
+        
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public String getDesc()
     {
-        // put your code here
-        return x + y;
+        return description;
+
     }
 }

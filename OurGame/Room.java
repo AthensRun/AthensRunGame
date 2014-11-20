@@ -19,9 +19,10 @@ public class Room
     private String description;
     private HashMap<String, Room> exits; 
 
-    ;
     private Command command;
-    private Purchases purchases;
+    private Person person1;
+    private Item item1;
+    private Item item2;
     // stores exits of this room.
 
     /**
@@ -63,9 +64,10 @@ public class Room
      */
     public String getLongDescription()
     {
-        return description + "  " +  getExitString();
+        return "You are " + description + "    " +  getExitString() + " \n ";
     }
-    
+
+  
     /**
      * Return a string describing the room's exits, for example
      * "Exits: north west".
@@ -73,10 +75,20 @@ public class Room
      */
     private String getExitString()
     {
-        String returnString = "Streets:";
+        String returnString = "Available Directions:";
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
-            returnString += " " + exit;
+            returnString += " " + exit +", ";
+        }
+        return returnString;
+    }
+
+    public String getBathExitString()
+    {
+        String returnString = "You are in ";
+        Set<String> keys = exits.keySet();
+        for(String exit : keys) {
+            returnString +=" " + exit;
         }
         return returnString;
     }
@@ -97,12 +109,7 @@ public class Room
         System.out.println("Do What?");
     }
 
-    public void open(Command command)
-    {
-        System.out.println("Do What?");
-    }
-
-    public void changeDescription(String newDescription)
+    public void changeDesc(String newDescription)
     {
         description = newDescription;
     }
@@ -110,8 +117,57 @@ public class Room
     public void enter(Command command)
     {
 
-        System.out.println("Enter where?");
+    }
+
+    public void setPerson(Person pPerson)
+    {
+        person1 = pPerson;     
+    }
+
+    public Person getPerson()
+    {
+
+         if (person1 != null)
+         {
+             return person1;
+            }
+         return null;
 
     }
+
+    public void setItem(int itemNo, Item pItem)
+    {
+        if(itemNo == 1)
+        {
+            item1 = pItem;
+
+        }
+        if (itemNo == 2)
+        {
+            item2 = pItem;
+        }
+    }
+
+    public Item getItem(int itemNo)
+    {
+        if(itemNo == 1)
+        {
+            return item1;
+
+        }
+        if (itemNo == 2)
+        {
+            return item2;
+        }
+        return null;
+
+    }
+
+    //     public String getItemsDesc()
+    //     {
+    //        
+    //         return item1.getDesc() + "   " + item2.getDesc();
+    //         
+    //     }
 
 }
