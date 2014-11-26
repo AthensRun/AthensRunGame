@@ -66,6 +66,8 @@ public class Room
     {
         return "You are " + description + "    " +  getExitString() + " \n ";
     }
+    
+     
 
   
     /**
@@ -73,22 +75,12 @@ public class Room
      * "Exits: north west".
      * @return Details of the room's exits.
      */
-    private String getExitString()
+    public String getExitString()
     {
         String returnString = "Available Directions:";
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
             returnString += " " + exit +", ";
-        }
-        return returnString;
-    }
-
-    public String getBathExitString()
-    {
-        String returnString = "You are in ";
-        Set<String> keys = exits.keySet();
-        for(String exit : keys) {
-            returnString +=" " + exit;
         }
         return returnString;
     }
@@ -103,6 +95,11 @@ public class Room
     {
         return exits.get(direction);
     }
+    
+    public void removeExit(String direction) 
+    {
+         exits.remove(direction);
+    }
 
     public void see(Command command)
     {
@@ -114,23 +111,24 @@ public class Room
         description = newDescription;
     }
 
-    public void enter(Command command)
+    public void setPerson( Person pPerson)
     {
+        
+        
+            person1 = pPerson; 
 
-    }
-
-    public void setPerson(Person pPerson)
-    {
-        person1 = pPerson;     
+        
+           
     }
 
     public Person getPerson()
     {
 
-         if (person1 != null)
-         {
-             return person1;
-            }
+         if(person1 != null)
+        {
+            return person1;
+
+        }
          return null;
 
     }
@@ -163,11 +161,19 @@ public class Room
 
     }
 
-    //     public String getItemsDesc()
-    //     {
-    //        
-    //         return item1.getDesc() + "   " + item2.getDesc();
-    //         
-    //     }
+    public String getItemsDesc()
+    {
+     
+        return "Food and Beverages: " + item1.getDesc() + ",  " + item2.getDesc() + " \n ";
+        
+    }
+ 
+        public String getPersonDesc(){
+            
+    
+       return "Found People: " + person1.getDesc() + "\n" ;
+   
+    
+    }
 
 }

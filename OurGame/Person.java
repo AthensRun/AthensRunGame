@@ -26,7 +26,7 @@ public class Person
     public Person(String description) 
     {
         this.description = description;
-        
+
     }
 
     public String getDesc()

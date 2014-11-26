@@ -16,10 +16,8 @@
 public class Item 
 {
     private String description;
-    
- 
+
   
-   
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -29,17 +27,13 @@ public class Item
     public Item(String description) 
     {
         this.description = description;
-      
+
     }
-    
-    
+
     public String getDesc()
     {
         return description;
     }
-    
-    public void getDrink()
-    {
-    }
+
     
 }
